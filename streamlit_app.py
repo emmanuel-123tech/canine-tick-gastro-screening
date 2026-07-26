@@ -489,10 +489,6 @@ with st.sidebar:
         label_visibility="collapsed",
     )
     st.markdown("---")
-    st.caption("PROJECT")
-    st.markdown("**Adeoti Dennis**  \nCPE/20/3372")
-    st.caption("Federal University of Technology, Akure")
-    st.markdown("---")
     st.caption("RBF-SVM • 17 predictors • 2 classes")
 
 if navigation == "Overview":
