@@ -324,33 +324,31 @@ def render_result(predicted_class, probabilities):
     }
     tick = probability_map["Tick fever"] * 100
     gastro = probability_map["Gastroenteritis"] * 100
-    st.markdown(
-        f"""
-        <div class="result-wrap">
-            <span class="result-tag">Preliminary model result</span>
-            <div class="result-name">{predicted_class}</div>
-            <div class="result-copy">The model found the entered record more similar to the
-            <strong>{predicted_class}</strong> class in the study data.</div>
-
-            <div class="prob-row">
-                <div class="prob-label"><span>Tick fever</span><span>{tick:.1f}%</span></div>
-                <div class="prob-track"><div class="prob-fill-teal" style="width:{tick:.1f}%"></div></div>
-            </div>
-            <div class="prob-row">
-                <div class="prob-label"><span>Gastroenteritis</span><span>{gastro:.1f}%</span></div>
-                <div class="prob-track"><div class="prob-fill-coral" style="width:{gastro:.1f}%"></div></div>
-            </div>
-
-            <div class="next-step"><strong>Recommended next step:</strong> Arrange an examination
-            by a qualified veterinarian and complete any appropriate laboratory confirmation.
-            Do not begin treatment from this result alone.</div>
-            <div class="small-print">These values are model estimates from retrospective records,
-            not clinical certainty. “Tick fever” is a broad recorded label and does not identify
-            a particular tick-borne organism.</div>
-        </div>
-        """,
-        unsafe_allow_html=True,
+    # Keep the HTML left-aligned. Indented HTML after a blank line can be
+    # interpreted by Markdown as a code block and displayed as raw markup.
+    result_html = (
+        '<div class="result-wrap">'
+        '<span class="result-tag">Preliminary model result</span>'
+        f'<div class="result-name">{predicted_class}</div>'
+        '<div class="result-copy">The model found the entered record more similar to the '
+        f'<strong>{predicted_class}</strong> class in the study data.</div>'
+        '<div class="prob-row">'
+        f'<div class="prob-label"><span>Tick fever</span><span>{tick:.1f}%</span></div>'
+        f'<div class="prob-track"><div class="prob-fill-teal" style="width:{tick:.1f}%"></div></div>'
+        '</div>'
+        '<div class="prob-row">'
+        f'<div class="prob-label"><span>Gastroenteritis</span><span>{gastro:.1f}%</span></div>'
+        f'<div class="prob-track"><div class="prob-fill-coral" style="width:{gastro:.1f}%"></div></div>'
+        '</div>'
+        '<div class="next-step"><strong>Recommended next step:</strong> Arrange an examination '
+        'by a qualified veterinarian and complete any appropriate laboratory confirmation. '
+        'Do not begin treatment from this result alone.</div>'
+        '<div class="small-print">These values are model estimates from retrospective records, '
+        'not clinical certainty. “Tick fever” is a broad recorded label and does not identify '
+        'a particular tick-borne organism.</div>'
+        '</div>'
     )
+    st.markdown(result_html, unsafe_allow_html=True)
 
 
 def render_screening():
