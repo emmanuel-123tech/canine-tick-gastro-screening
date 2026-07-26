@@ -255,7 +255,7 @@ def open_screening():
 
 def render_home():
     hero(
-        "Smarter preliminary screening for canine illness",
+        "AI-assisted screening for tick fever and gastroenteritis",
         "A focused decision-support prototype that compares patterns associated with the clinic-recorded classes of tick fever and gastroenteritis.",
         "CanineCare AI • Research prototype",
     )
