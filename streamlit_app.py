@@ -8,7 +8,7 @@ import streamlit as st
 
 
 st.set_page_config(
-    page_title="CanineCare AI | Screening",
+    page_title="VetSignal AI | Screening",
     page_icon="🐾",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -257,7 +257,7 @@ def render_home():
     hero(
         "AI-assisted screening for tick fever and gastroenteritis",
         "A focused decision-support prototype that compares patterns associated with the clinic-recorded classes of tick fever and gastroenteritis.",
-        "CanineCare AI • Research prototype",
+        "VetSignal AI • Research prototype",
     )
     safety_notice()
     st.markdown(
@@ -474,7 +474,7 @@ with st.sidebar:
         """
         <div class="brand">
             <div class="brand-mark">🐾</div>
-            <div><div class="brand-name">CanineCare AI</div>
+            <div><div class="brand-name">VetSignal AI</div>
             <div class="brand-sub">Veterinary screening research</div></div>
         </div>
         """,
